@@ -10,7 +10,7 @@ public class HomeController {
 	@RequestMapping("/")
     @ResponseBody
 	public String home() {
-		return "Olá Mundo!!!";
+		return "Olá, Bem-vindo ao ToDo Cloud!";
 	}
 
 	
