@@ -1,16 +1,21 @@
 package br.com.todo.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import br.com.todo.service.TodoService;
+
+@RestController
 public class HomeController {
+	@Autowired
+	private TodoService service;
 	
-	@RequestMapping("/")
-    @ResponseBody
-	public String home() {
-		return "Olá, Bem-vindo ao ToDo Cloud!";
+	
+	@GetMapping("/todos")
+	public ResponseEntity<?> listAll() {
+		return ResponseEntity.ok(service.list());
 	}
 
 	
