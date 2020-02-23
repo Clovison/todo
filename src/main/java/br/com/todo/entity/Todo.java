@@ -1,5 +1,6 @@
 package br.com.todo.entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,14 +14,15 @@ public class Todo {
 	private Long id;
 	private String username;
 	private String description;
-	private Date targetDate;
+
+	private LocalDateTime targetDate = LocalDateTime.now();
 	private boolean isDone;
 	
 	public Todo() {
 		
 	}
 
-	public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
+	public Todo(long id, String username, String description, LocalDateTime targetDate, boolean isDone) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -53,11 +55,11 @@ public class Todo {
 		this.description = description;
 	}
 
-	public Date getTargetDate() {
+	public LocalDateTime getTargetDate() {
 		return targetDate;
 	}
 
-	public void setTargetDate(Date targetDate) {
+	public void setTargetDate(LocalDateTime targetDate) {
 		this.targetDate = targetDate;
 	}
 

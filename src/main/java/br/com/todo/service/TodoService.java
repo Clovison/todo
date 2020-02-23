@@ -3,6 +3,8 @@ package br.com.todo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.todo.entity.Todo;
@@ -22,7 +24,11 @@ public class TodoService {
 		repository.save(todo);
 	}
 	
-	public List<Todo> list(){
-		return repository.findAll();
+	public Page<Todo> findAll(Pageable pageable){
+		return repository.findAll(pageable);
+	}
+	
+	public Page<Todo> findByUsername(String userName,Pageable pageable){
+		return repository.findByUsername(userName,pageable);
 	}
 }
