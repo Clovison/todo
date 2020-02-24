@@ -16,7 +16,7 @@ public class Todo {
 	private String description;
 
 	private LocalDateTime targetDate = LocalDateTime.now();
-	private boolean isDone;
+	private Boolean isDone;
 	
 	public Todo() {
 		
@@ -63,11 +63,11 @@ public class Todo {
 		this.targetDate = targetDate;
 	}
 
-	public boolean isDone() {
+	public Boolean isDone() {
 		return isDone;
 	}
 
-	public void setDone(boolean isDone) {
+	public void setDone(Boolean isDone) {
 		this.isDone = isDone;
 	}
 
